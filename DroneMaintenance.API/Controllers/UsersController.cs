@@ -77,7 +77,7 @@ namespace DroneMaintenance.API.Controllers
         [HttpPost("signout/{id}")]
         public async Task<ActionResult<UserModel>> SignOut(Guid id)
         {
-            await _usersService.UpdateToken(id, null);
+            await _usersService.UpdateToken(id);
 
             return Ok();
         }
