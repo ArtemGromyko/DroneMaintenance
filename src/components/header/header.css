@@ -1,0 +1,13 @@
+.header {
+    min-height: 75px;
+    margin:0 auto;
+}
+
+.header a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color:red;
+}
