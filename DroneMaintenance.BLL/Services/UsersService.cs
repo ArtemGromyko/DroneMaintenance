@@ -150,7 +150,7 @@ namespace DroneMaintenance.BLL.Services
             return _mapper.Map<List<UserModel>>(userEntities);
         }
 
-        public async Task UpdateToken(Guid id, string token)
+        public async Task UpdateToken(Guid id, string token = null)
         {
             var userEntity = await _userRepository.GetUserByIdAsync(id);
             CheckEntityExistence(id, userEntity, nameof(User));
