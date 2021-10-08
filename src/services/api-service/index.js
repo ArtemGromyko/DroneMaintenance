@@ -1,6 +1,6 @@
 import HttpError from './../../errors/HttpError';
 
-const _apiBase = 'https://localhost:5001/api';
+const _apiBase = 'http://localhost:5000/api';
 
 const headers = {
     'Accept': 'application/json',
@@ -37,7 +37,7 @@ function getOptionsWithToken(method, headers, token, body) {
     return options;
 }
 
-function getOptionsWithTokenWithoutToken(method, headers, body) {
+function getOptionsWithoutToken(method, headers, body) {
     const options = {
         method: method,
         headers: headers ?? undefined,
@@ -49,7 +49,7 @@ function getOptionsWithTokenWithoutToken(method, headers, body) {
 
 async function fetchData(url, options) {
     const response = await fetch(`${_apiBase}${url}`, options);
-
+    console.log(response.status);
     if (!response.ok) {
         throw new HttpError('Sorry, something went wrong(', response.status);
     }
@@ -153,5 +153,5 @@ export {
     getAllDrones,
     authenticate, signOut, getRequestsForUser, deleteRequestForUser, createRequestForUser, updateRequestForUser, getAllComments,
     _apiBase, postOptions, getPostOptionsWithToken, getPostOptionsWithBody, fetchData, getOptionsWithToken, headers, getAuthorization, postResource,
-    createUrl, createUrlWithId, getOptionsWithTokenWithoutToken
+    createUrl, createUrlWithId, getOptionsWithoutToken
 };

@@ -92,6 +92,11 @@ const Header = () => {
                             </Link>
                         </h4>
                         <h4>
+                            <Link className={classes.link} to="/orders">
+                                Orders
+                            </Link>
+                        </h4>
+                        <h4>
                             <Link className={classes.link} to="/comments">
                                 Comments
                             </Link>
@@ -118,6 +123,11 @@ const Header = () => {
                         <h4>
                             <Link className={classes.link} to="/requests">
                                 Requests
+                            </Link>
+                        </h4>
+                        <h4>
+                            <Link className={classes.link} to="/orders">
+                                Orders
                             </Link>
                         </h4>
                         <h4>

@@ -16,6 +16,7 @@ import ContractsPage from '../contracts-page';
 import CommentForm from '../comment-form';
 import DroneForm from '../drone-form';
 import Error from './../error/index';
+import OrdersPage from './../orders-page/orders-page';
 
 function App() {
     return (
@@ -96,6 +97,12 @@ function App() {
                     <WithJwt>
                         <Header />
                         <ContractsPage />
+                    </WithJwt>
+                </Route>
+                <Route path='/orders'>
+                    <WithJwt>
+                        <Header />
+                        <OrdersPage />
                     </WithJwt>
                 </Route>
                 <Route path='/error'>

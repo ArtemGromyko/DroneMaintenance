@@ -1,7 +1,7 @@
-import { headers, getOptionsWithToken, fetchData, getOptionsWithTokenWithoutToken } from ".";
+import { headers, getOptionsWithToken, fetchData, getOptionsWithoutToken } from ".";
 
 async function authenticate(user, auth) {
-    const options = getOptionsWithTokenWithoutToken('POST', headers, user);
+    const options = getOptionsWithoutToken('POST', headers, user);
 
     const res = auth ? await fetchData(`/users/`, options) :
         await fetchData(`/users/registration`, options);
