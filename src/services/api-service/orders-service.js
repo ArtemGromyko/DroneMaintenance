@@ -2,11 +2,18 @@ import { headers, getOptionsWithToken, fetchData, createUrlWithId, getOptionsWit
 
 const url = '/orders/';
 
-async function getOrders() {
-    const options = getOptionsWithoutToken('GET', headers);
+async function getOrders(user) {
+    const options = getOptionsWithToken('GET', headers, user.token);
     const res = await fetchData(url, options);
 
     return res.json();
 }
 
-export { getOrders }
+async function getOrdersForUser(user) {
+    const options = getOptionsWithToken('GET', headers, user.token);
+    const res = await fetchData(`/users/${user.id}/orders`, options);
+
+    return res.json();
+}
+
+export { getOrders, getOrdersForUser }

@@ -42,7 +42,7 @@ const ContractsPage = () => {
             <TableCell >id</TableCell>
             <TableCell align="right">start date</TableCell>
             <TableCell align="right">end date</TableCell>
-            <TableCell align="right">service model id</TableCell>
+            <TableCell align="right">service request id</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -51,7 +51,7 @@ const ContractsPage = () => {
               <TableCell >{row.id}</TableCell>
               <TableCell align="right">{row.workStartDate}</TableCell>
               <TableCell align="right">{row.workEndDate}</TableCell>
-              <TableCell align="right">{row.servicemodelId}</TableCell>
+              <TableCell align="right">{row.serviceRequestId}</TableCell>
             </TableRow>
           ))}
         </TableBody>

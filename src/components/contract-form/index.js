@@ -107,6 +107,8 @@ const ContractForm = () => {
         const contract = await response.json();
 
         await addSparePartForContractAsync(user.token, contract.id, {sparePartId: part.id, quantity: quantity});
+
+        history.push('/requests');
     }
 
     return (
